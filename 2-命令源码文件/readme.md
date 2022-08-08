@@ -183,8 +183,8 @@ Or you can create custom flags that satisfy the Value interface (with
 ```go
 
 type Value interface {
-	String() string // 序列化
-	Set(string) error // 反序列化
+	String() string // 用于序列化
+	Set(string) error // 用于反序列化
 }
 ```
 
