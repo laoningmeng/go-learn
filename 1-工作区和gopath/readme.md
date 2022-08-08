@@ -59,7 +59,8 @@ go源代码是以代码包为基本组织单位的。每个代码包都有导入
 
 
 
-![image-20220808170124761](/Users/liuxing/workerspace/mynote/go-learn/img/image-20220808170124761.png)
+![image-20220808170124761](../img/image-20220808170124761.png)
+
 
 在查找依赖包时会先查找最外层的依赖pkg3,  先从GOROOT， 也就是go 的sdk里搜一下，如果没有继续从gopath, gopath 因为可能有多个目录，挨个顺序扫描， 如果还没有就panic 了， 同样go  get的时候也是这个套路，先走上面， 如果没有查找到就从网络上搜索资源。
 
