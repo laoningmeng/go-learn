@@ -10,7 +10,6 @@
 var name string = "zhangsan"
 var name="zhangsan"
 name:= "zhangsan" // 这种用于函数内部使用
-
 var name = *flag.String("name","everyone","提示信息") // flag.String 返回的是*string  使用* 将指针对应的值取出来
 ```
 
