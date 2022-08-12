@@ -128,7 +128,26 @@ fmt.Println(s1) //[1]
 * `%p` 要打印一个指针的值
 
 ```go
+var arr = [3]int{1, 2, 3}
+s1 := arr[0:1]
+fmt.Printf("s1的内存地址？%p \n", s1)
+fmt.Printf("arr 的内存地址？%p \n", &arr)
+fmt.Printf("arr[0] 的内存地址？%p \n", &arr[0])
+
+s2 := arr[1:2]
+fmt.Printf("s2的内存地址？%p \n", s2)
+fmt.Printf("arr[1]的内存地址？%p \n", &arr[1])
+
+/**
+s1的内存地址？0xc0000b4000 
+arr 的内存地址？0xc0000b4000 
+arr[0] 的内存地址？0xc0000b4000 
+s2的内存地址？0xc0000b4008 
+arr[1]的内存地址？0xc0000b4008
+*/
 ```
+
+
 
 
 
@@ -138,7 +157,13 @@ fmt.Println(s1) //[1]
 
 `src/runtime/slice.go`
 
-
+```go
+type slice struct {
+	array unsafe.Pointer // 这个Pointer可以转换成任意类型的指针
+	len   int
+	cap   int
+}
+```
 
 
 
